@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards de Teorias da Aprendizagem</title>
+    <style>
+        /* --- Basic Page Styles --- */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        p.instructions {
+            text-align: center;
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+        /* --- Card Grid Layout --- */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        /* --- Card Flip Animation --- */
+        .card {
+            background-color: transparent;
+            height: 240px; /* Increased height for the image */
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.7s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            border-radius: 10px;
+        }
+
+        .card.is-flipped .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* --- Card Front Styling (with Image) --- */
+        .card-front {
+            background-color: #ffffff;
+            color: #2c3e50;
+        }
+        
+        .card-front img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%; /* Makes the image circular */
+            object-fit: cover; /* Prevents image stretching */
+            border: 3px solid #ecf0f1;
+            margin-bottom: 15px;
+            background-color: #f0f0f0; /* Color for placeholders */
+        }
+        
+        .card-front h3 {
+            margin: 0;
+            font-size: 1.5em;
+            color: #3498db;
+        }
+        
+        .card-front p {
+            margin: 5px 0 0;
+            font-size: 1em;
+            color: #7f8c8d;
+        }
+
+        /* --- Card Back Styling --- */
+        .card-back {
+            background-color: #3498db;
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+        .card-back ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.95em;
+        }
+        
+        .card-back li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Flashcards de Teorias da Aprendizagem</h1>
+        <p class="instructions">Clique em um card para ver os conceitos chave da teoria.</p>
+
+        <!-- =============================================================== -->
+        <h2>TEORIAS COMPORTAMENTALISTAS ANTIGAS</h2>
+        <div class="card-grid">
+            <!-- Pavlov -->
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Pavlov.jpeg" alt="Retrato de Pavlov">
+                        <h3>Pavlov</h3>
+                        <p>Rússia, 1849-1936</p>
+                    </div>
+                    <div class="card-back"><ul><li>Condicionamento clássico</li><li>Aprendizagem de sinal</li></ul></div>
+                </div>
+            </div>
+            <!-- Watson -->
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Watson.jpeg" alt="Retrato de Watson">
+                        <h3>Watson</h3>
+                        <p>EUA, 1878-1958</p>
+                    </div>
+                    <div class="card-back"><ul><li>Behaviorismo</li><li>Cadeia de reflexos</li><li>Frequência e recenticidade</li></ul></div>
+                </div>
+            </div>
+            <!-- Guthrie -->
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Guthrie.jpeg" alt="Retrato de Guthrie">
+                        <h3>Guthrie</h3>
+                        <p>EUA, 1886-1959</p>
+                    </div>
+                    <div class="card-back"><ul><li>Associação por contiguidade</li><li>Hábito</li></ul></div>
+                </div>
+            </div>
+            <!-- Thorndike -->
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Thorndike.jpeg" alt="Retrato de Thorndike">
+                        <h3>Thorndike</h3>
+                        <p>EUA, 1874-1949</p>
+                    </div>
+                    <div class="card-back"><ul><li>Estímulo-resposta</li><li>Lei do efeito (reforço)</li><li>Conexionismo</li></ul></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =============================================================== -->
+        <h2>NEOBEHAVIORISMO / TRANSIÇÃO COMPORTAMENTALISMO-COGNITIVISMO</h2>
+        <div class="card-grid">
+            <!-- Hull -->
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Hull.jpeg" alt="Retrato de Hull">
+                        <h3>Hull</h3>
+                        <p>EUA, 1884-1952</p>
+                    </div>
+                    <div class="card-back"><ul><li>Estímulo-organismo-resposta</li><li>Teoria do impulso-redução</li><li>(Necessidade biológica-homeostase)</li></ul></div>
+                </div>
+            </div>
+            <!-- Spence -->
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Spence.jpeg" alt="Retrato de Spence">
+                        <h3>Spence</h3>
+                        <p>EUA, 1907-1967</p>
+                    </div>
+                    <div class="card-back"><ul><li>Continuador de Hull</li><li>Variáveis motivacionais</li><li>(Incentivo, expectativa)</li></ul></div>
+                </div>
+            </div>
+            <!-- Tolman -->
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Tolman.jpeg" alt="Retrato de Tolman">
+                        <h3>Tolman</h3>
+                        <p>EUA, 1886-1959</p>
+                    </div>
+                    <div class="card-back"><ul><li>Behaviorismo intencional</li><li>Behaviorismo cognitivo</li><li>Variável interveniente (cognição)</li><li>Mapas cognitivos</li></ul></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- =============================================================== -->
+        <h2>TEORIAS COMPORTAMENTALISTAS</h2>
+        <div class="card-grid">
+            <!-- Skinner -->
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Skinner.jpeg" alt="Retrato de Skinner">
+                        <h3>Skinner</h3>
+                        <p>EUA, 1904-1990</p>
+                    </div>
+                    <div class="card-back"><ul><li>Resposta-reforço</li><li>Behaviorismo radical</li><li>Condicionamento operante</li><li>Instrução Programada (1954)</li></ul></div>
+                </div>
+            </div>
+            <!-- Keller -->
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Keller.jpeg" alt="Retrato de Keller">
+                        <h3>Keller</h3>
+                        <p>EUA, 1899-1996</p>
+                    </div>
+                    <div class="card-back"><ul><li>Continuador de Skinner</li><li>Sistema de Instrução Personalizada</li><li>(PSI, 1963-68)</li></ul></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =============================================================== -->
+        <h2>TEORIAS COGNITIVISTAS ANTIGAS</h2>
+        <div class="card-grid">
+            <!-- Hebb -->
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Hebb.jpeg" alt="Retrato de Hebb">
+                        <h3>Hebb</h3>
+                        <p>Canadá, 1904-1985</p>
+                    </div>
+                    <div class="card-back"><ul><li>Modelo neuropsicológico</li><li>Aglomerados de células</li><li>Plasticidade</li><li>Regra de Hebb</li></ul></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =============================================================== -->
+        <h2>TEORIAS COGNITIVISTAS</h2>
+        <div class="card-grid">
+            <!-- Piaget -->
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Piaget.jpeg" alt="Retrato de Piaget">
+                        <h3>Piaget</h3>
+                        <p>Suíça, 1896-1980</p>
+                    </div>
+                    <div class="card-back"><ul><li>Períodos do desenvolvimento</li><li>Epistemologia genética</li><li>Assimilação, acomodação, equilibração</li></ul></div>
+                </div>
+            </div>
+            <!-- Kelly -->
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Kelly.jpeg" alt="Retrato de Kelly">
+                        <h3>Kelly</h3>
+                        <p>EUA, 1905-1967</p>
+                    </div>
+                    <div class="card-back"><ul><li>Psicologia dos construtos sociais</li><li>Homem-cientista</li><li>Alternativismo construtivo</li></ul></div>
+                </div>
+            </div>
+            <!-- Bruner -->
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Bruner.jpeg" alt="Retrato de Bruner">
+                        <h3>Bruner</h3>
+                        <p>EUA, 1915-2016</p>
+                    </div>
+                    <div class="card-back"><ul><li>Representação (ativa, icônica, simbólica)</li><li>Currículo em espiral</li><li>Aprendizagem por descoberta</li><li>"Revolução cognitiva” (1956)</li></ul></div>
+                </div>
+            </div>
+            <!-- Gagné -->
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Gagne.jpeg" alt="Retrato de Gagné">
+                        <h3>Gagné</h3>
+                        <p>EUA, 1916-2002</p>
+                    </div>
+                    <div class="card-back"><ul><li>Processamento de informações</li><li>Teoria da instrução</li><li>Hierarquias de aprendizagem</li></ul></div>
+                </div>
+            </div>
+            <!-- Ausubel -->
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Ausubel.jpeg" alt="Retrato de Ausubel">
+                        <h3>Ausubel</h3>
+                        <p>EUA, 1918-2008</p>
+                    </div>
+                    <div class="card-back"><ul><li>Aprendizagem significativa</li><li>Subsunçores</li><li>Diferenciação progressiva</li><li>Mapas conceituais</li></ul></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- =============================================================== -->
+        <h2>TEORIAS COGNITIVISTAS HUMANISTAS</h2>
+        <div class="card-grid">
+            <!-- Gowin -->
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Gowin.jpeg" alt="Retrato de Gowin">
+                        <h3>Gowin</h3>
+                        <p>EUA, 1921-2008</p>
+                    </div>
+                    <div class="card-back"><ul><li>Modelo de ensino-aprendizagem</li><li>Congruência de significados</li><li>Aprendizagem baseada em conhecimento</li></ul></div>
+                </div>
+            </div>
+            <!-- Bandura -->
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Bandura.jpeg" alt="Retrato de Bandura">
+                        <h3>Bandura</h3>
+                        <p>EUA, 1925-2021</p>
+                    </div>
+                    <div class="card-back"><ul><li>Aprendizagem social</li><li>Autoeficácia</li></ul></div>
+                </div>
+            </div>
+            <!-- Novak -->
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Novak.jpeg" alt="Retrato de Novak">
+                        <h3>Novak</h3>
+                        <p>EUA, 1932-2023</p>
+                    </div>
+                    <div class="card-back"><ul><li>Teoria de educação</li><li>Aprendizagem significativa</li><li>Mapas conceituais</li><li>Aprender a aprender</li></ul></div>
+                </div>
+            </div>
+            <!-- Hanesian -->
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="Portrait_Placeholder.png" alt="Sem Retrato">
+                        <h3>Hanesian</h3>
+                        <p>?-?</p>
+                    </div>
+                    <div class="card-back"><ul><li>Colaboradora de Ausubel e Novak</li></ul></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            card.addEventListener('click', function() {
+                this.classList.toggle('is-flipped');
+            });
+        });
+    </script>
+
+</body>
+</html>
